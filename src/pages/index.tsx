@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { SketchPicker } from 'react-color'
+import { PageWrapper } from './components/PageWrapper'
 
 const API_URL = 'http://suunn.herokuapp.com/mqtt'
 
@@ -17,13 +18,13 @@ const Home: NextPage = () => {
     fetch(API_URL, postReqOpts)
   }, [color])
   return (
-    <div className="h-screen bg-gradient-to-t from-yellow-200">
+    <PageWrapper>
       <Head>
         <title>suunn</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center max-w-3xl mx-auto">
+      <main className="flex flex-col items-center justify-center h-screen max-w-3xl mx-auto">
         <h1 className="my-10 font-mono text-6xl font-bold text-yellow-600">
           suunns
         </h1>
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
       <footer className="flex justify-center mx-auto mt-20">
         <p>Powered by Ben and Danielle</p>
       </footer>
-    </div>
+    </PageWrapper>
   )
 }
 

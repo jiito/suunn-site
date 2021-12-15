@@ -18,3 +18,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+th {
+  border: 1px solid gray;
+}
+
+td {
+  padding: 1em 2em ;
+  border: 1px solid gray;
+}
