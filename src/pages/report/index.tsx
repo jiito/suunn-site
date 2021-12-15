@@ -38,8 +38,8 @@ const ReportPage = () => {
         <p className="self-start py-4">
           &emsp;&emsp;It is downright depressing waking up these days to the
           grey haze of a Vermont sky in the morning! A good sun presence leads
-          to an easier wake up. SAD sucks Additionally, it would be cool to have
-          the interactive capabilities of long distance friendship lamps. Covid
+          to an easier wake up. Additionally, it would be cool to have the
+          interactive capabilities of long distance friendship lamps. Covid
           means more time in between visiting friends and family and it would be
           useful to have a lamp that allows you to easily send a ‘hello, I’m
           thinking of you message’.
