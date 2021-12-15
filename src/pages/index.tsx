@@ -53,7 +53,7 @@ const Home: NextPage = () => {
             <Link href="/report">Final Writeup</Link>
           </div>
           <div className="px-4 py-2 mt-4 text-white bg-black rounded-md cursor-pointer hover:bg-gray-900">
-            <Link href="/report">Github Repo</Link>
+            <Link href="https://github.com/daninewbs/Suunn">Github Repo</Link>
           </div>
         </div>
       </main>

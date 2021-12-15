@@ -27,3 +27,10 @@ td {
   padding: 1em 2em ;
   border: 1px solid gray;
 }
+
+code {
+  background-color: gainsboro;
+  color:crimson;
+  padding: 0px 1px;
+  border-radius: 2px;
+}

@@ -12,12 +12,16 @@ const ReportPage = () => {
           Ben Allan-Rahill and Danielle Newberry
         </h4>
 
-        <h4 className="self-start my-6 text-xl font-bold">Hi! 👋 </h4>
+        <div className="px-4 py-2 mt-4 text-white bg-blue-900 rounded-md cursor-pointer hover:bg-yellow-500">
+          <Link href="/">home</Link>
+        </div>
+
+        <h4 className="self-start my-6 text-2xl font-bold">Hi! 👋 </h4>
         <p className="self-start ">
           We are Ben and Danielle and we worked as a team for our final project
-          in Middlebury College&apos;s CSCI 0435: Embedded Systems. For our
-          final project, we made an IoT sunrise lamp that helps you get up in
-          the morning!
+          in Middlebury College&apos;s{' '}
+          <strong>CSCI 0435: Embedded Systems</strong>. For our final project,
+          we made an IoT sunrise lamp that helps you get up in the morning!
         </p>
         <h4 className="self-start my-6 text-xl font-bold">Bill of Materials</h4>
         <div>
@@ -103,6 +107,7 @@ const ReportPage = () => {
           Huzzah to the Neopixels and the Piezo buzzer. Connecting the Huzzah to
           the breadboard allowed us to access the GPIO pins (A0, A1) on the MCU
           to connect the Neopixels and the buzzer. <br />
+          <br />
           &emsp;&emsp;For power, we used a 5V 1A USB power supply and connected
           this to the micro USB port on the Huzzah. This power supply could be
           used to power the Huzzah and the Neopixels. The Neopixels used the USB
@@ -126,16 +131,19 @@ const ReportPage = () => {
           during the idle state. The sunrise state is when the light starts to
           brighten over a six minute period and then an alarm sound plays. This
           state is exited by pressing on the B button, starting the idle state
-          again. <br /> &emsp;&emsp;The button presses are detected using a mix
-          of interrupts and polling. To detect a long press on a button, we used
-          a special interrupt service routine (ISR). The LONG_PRESS_ISR sets the
-          time of the first press and compares this with the time the button was
-          released to determine if the press was long enough. We can do this by
-          setting the interrupt to trigger on rising and falling, i.e. when the
-          button is pressed and released. This means that the interrupt will
-          trigger once when the button is pressed, setting the first timestamp
-          and again when the button is released, checking this against the first
-          timestamp to determine how long the button was pressed for. <br />
+          again. <br />
+          <br /> &emsp;&emsp;The button presses are detected using a mix of
+          interrupts and polling. To detect a long press on a button, we used a
+          special interrupt service routine (ISR). The{' '}
+          <code>LONG_PRESS_ISR</code> sets the time of the first press and
+          compares this with the time the button was released to determine if
+          the press was long enough. We can do this by setting the interrupt to
+          trigger on rising and falling, i.e. when the button is pressed and
+          released. This means that the interrupt will trigger once when the
+          button is pressed, setting the first timestamp and again when the
+          button is released, checking this against the first timestamp to
+          determine how long the button was pressed for. <br />
+          <br />
           &emsp; &emsp;The buttons that do not need long press functionality use
           another ISR. This ISR sets which button was pressed on the Button
           class. This record of which button was pressed is used by the Button
@@ -151,15 +159,17 @@ const ReportPage = () => {
           send frames to the screen and subsequently show those frames. However,
           when it came to customizability, this library had minimal options. We
           could send simple text, but the font sizes were too small to mimic a
-          real clock. <br /> &emsp;&emsp;To solve this problem, we implemented
-          our own abstraction on top of this library. Our driver lives in the
-          Screen and ClockDisplay classes. The Screen class implements the basic
+          real clock. <br />
+          <br /> &emsp;&emsp;To solve this problem, we implemented our own
+          abstraction on top of this library. Our driver lives in the Screen and
+          ClockDisplay classes. The Screen class implements the basic
           functionality of drawing digits and clearing the screen. The
           ClockDisplay builds on top of this, by using the Screen class to draw
           the digits of a particular time, the separating dots, and the AM/PM
           indicator. The ClockDisplay class splits up drawing the minutes and
           the hours so that if we were to change the interface of how the alarm
           is edited, it would be straightforward.
+          <br />
           <br />
           &emsp; &emsp;To display the alarm and the live clock, we made two
           child classes of the ClockDisplay class. Currently, there is no
@@ -187,10 +197,11 @@ const ReportPage = () => {
           we named real_clock that made it simpler to extract individual
           components of the current date with more getter methods. The Clock
           Display class then drew from this to display the current time in
-          military format. <br /> &emsp;&emsp;With the alarm feature of this
-          library we are able to set an alarm that triggers at a certain hour
-          and minute of the day by continuously checking if the current time is
-          the pre-set alarm time.
+          military format. <br />
+          <br /> &emsp;&emsp;With the alarm feature of this library we are able
+          to set an alarm that triggers at a certain hour and minute of the day
+          by continuously checking if the current time is the pre-set alarm
+          time.
         </p>
         <h4 className="self-start pl-4 my-2 text-lg font-semibold">
           💾 Final Product
@@ -208,11 +219,13 @@ const ReportPage = () => {
           change to the specific color specified in the message. When the user
           presses the A or B button in the idle state the suunn remains in the
           same state but the light turns on/off or changes color respectively
+          <br />
           <br /> &emsp;&emsp; If the user presses the C button for a long time
           the suunn transitions into the edit alarm state. In this state the A
           and B buttons are used to increase or decrease the time. Once a user
           has decided on a given alarm time they would like to set, they exit
           this edit alarm state with another long press of the C button.
+          <br />
           <br /> &emsp;&emsp;When the suunn senses that the current time has
           reached the pre-set alarm time it enters the sunrise state. The
           neopixel gets gradually brighter and brighter over a pre-set period of
@@ -342,6 +355,7 @@ const ReportPage = () => {
           creating specific button sequences to control setting the alarm time.
           Danielle also connected the devices to wifi to receive MQTT messages
           from the Adafruit IO website dashboard(milestone 6).
+          <br />
           <br /> &emsp;&emsp; At the beginning of Week 2 we came back together
           to merge our code into the finite state machine structure and make our
           second clock. Both the stacking boards worked together to accomplish
@@ -352,6 +366,7 @@ const ReportPage = () => {
           ability to change another suunns color directly (without using the
           MQTT site). However, milestone 5: having the user be able to set the
           alarm time through wifi was not accomplished.
+          <br />
           <br /> &emsp;&emsp; Week 3 we worked on making our own website that a
           user can use to view all of these instructions and also change the
           suunns color on.
