@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { SketchPicker } from 'react-color'
-import { PageWrapper } from './components/PageWrapper'
+import { PageWrapper } from '../components/PageWrapper'
 
 const API_URL = 'http://suunn.herokuapp.com/mqtt'
 
