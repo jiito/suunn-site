@@ -24,6 +24,26 @@ const ReportPage = () => {
           <strong>CSCI 0435: Embedded Systems</strong>. For our final project,
           we made an IoT sunrise lamp that helps you get up in the morning!
         </p>
+        <h4 className="self-start my-6 text-xl font-bold">🥅 Goal</h4>
+        <p className="self-start py-4">
+          &emsp;&emsp;An alarm clock with a sunrise wake-up feature and
+          potentially additional capabilities. It would allow you to easily set
+          a specific time to trigger the wakeup/sunrise process either by using
+          buttons on the time display screen or by using wifi to upload a time.
+          You would be awoken gradually over a 30 min period where the lamp
+          brightness increases until your specified wakeup time where an alarm
+          sound wakes you up for sure.
+        </p>
+        <h4 className="self-start my-6 text-xl font-bold">💪 Motivation</h4>
+        <p className="self-start py-4">
+          &emsp;&emsp;It is downright depressing waking up these days to the
+          grey haze of a Vermont sky in the morning! A good sun presence leads
+          to an easier wake up. SAD sucks Additionally, it would be cool to have
+          the interactive capabilities of long distance friendship lamps. Covid
+          means more time in between visiting friends and family and it would be
+          useful to have a lamp that allows you to easily send a ‘hello, I’m
+          thinking of you message’.
+        </p>
         <h4 className="self-start my-6 text-xl font-bold">Bill of Materials</h4>
         <div>
           <table className="border border-collapse border-gray-500 table-auto ">
@@ -95,6 +115,7 @@ const ReportPage = () => {
             </tbody>
           </table>
         </div>
+
         <p className="self-start py-4">
           &emsp;&emsp;Above are the parts that we used in our project. We chose
           the Adafruit Feather ecosystem as it allowed for compact, easy
@@ -451,6 +472,33 @@ const ReportPage = () => {
           <li>Music Alarms with speaker</li>
           <li>Brighter Lights</li>
         </ul>
+        <h4 className="self-start my-6 text-xl font-bold">References</h4>
+        <div className="flex flex-col self-start underline">
+          <a
+            href="https://micropython-on-wemos-d1-mini.readthedocs.io/en/latest/basics.html#beepers"
+            className="self-start py-4"
+          >
+            Buzzer Info
+          </a>
+          <a
+            href="https://github.com/mchobby/esp8266-upy/blob/master/pcf8523/"
+            className="self-start py-4"
+          >
+            Real Time Clock Library
+          </a>
+          <a
+            href="https://github.com/nemart69/sh1107-micropython"
+            className="self-start py-4"
+          >
+            OLED Screen Library
+          </a>
+          <a
+            href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-huzzah32-esp32-feather.pdf"
+            className="self-start py-4"
+          >
+            Huzzah Datasheet
+          </a>
+        </div>
       </main>
     </PageWrapper>
   )
