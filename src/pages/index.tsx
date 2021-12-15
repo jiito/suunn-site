@@ -11,7 +11,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     const postReqOpts = {
       method: 'POST',
-      mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic: 'suunn/color', message: { color } }),
     }
