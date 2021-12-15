@@ -211,6 +211,23 @@ const ReportPage = () => {
           by continuously checking if the current time is the pre-set alarm
           time.
         </p>
+        <h4 className="self-start pl-4 my-2 text-lg font-semibold">MQTT</h4>
+        <p className="self-start py-4">
+          &emsp;&emsp; To communicate between our MCU and our website, we used
+          the MQTT protocol. This leightweight porocol allows clients (devices,
+          websites, etc.) to send messages to each other through a broker. We
+          chose Amazon Web Services&apos; IoT core MQTT broker. Using access
+          tokens, we built a very simple Node.js server to take a request form
+          our client-site and send it to the AWS broker. Idealy, we could go
+          straigt from our client to AWS, but after trial and error, it was
+          simpler to write more code and create a server. <br />
+          <br /> &emsp;&emsp; On our device, we had to upload our AWS access
+          tokens and create an MQTT client. The suunns are subscribed to the{' '}
+          <code>suunn/color</code> topic. This allows them to listen for changes
+          form the site. If you wanted to set up your own suunn, all you would
+          have to do is change the WIFI credentials in our <code>MQTT</code>{' '}
+          class.
+        </p>
         <h4 className="self-start pl-4 my-2 text-lg font-semibold">
           💾 Final Product
         </h4>
