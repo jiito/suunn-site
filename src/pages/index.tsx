@@ -45,14 +45,17 @@ const Home: NextPage = () => {
             our MQTT broker under the <code>suunn/color</code> topic. This means
             that any devices subscribed to that topic will get the message. Ours
             suunns are listening for messages on this topic to change their
-            light color.
+            light color.{' '}
+            <strong>
+              See the demo <Link href={'/report#demo-vid'}>here!</Link>
+            </strong>
           </p>
         )}
         <div className="flex justify-around w-5/12 pt-8">
           <div className="px-4 py-2 mt-4 text-white bg-yellow-500 rounded-md cursor-pointer hover:bg-blue-900">
             <Link href="/report">Final Writeup</Link>
           </div>
-          <div className="px-4 py-2 mt-4 text-white bg-black rounded-md cursor-pointer hover:bg-gray-900">
+          <div className="px-4 py-2 mt-4 text-white bg-black rounded-md cursor-pointer hover:bg-gray-500">
             <Link href="https://github.com/daninewbs/Suunn">Github Repo</Link>
           </div>
         </div>

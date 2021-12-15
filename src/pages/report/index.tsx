@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { PageWrapper } from '../../components/PageWrapper'
 
@@ -29,7 +30,7 @@ const ReportPage = () => {
             <thead>
               <tr>
                 <th className="p-4 bg-gray-300 border border-gray-200">
-                  Compnent
+                  Component
                 </th>
 
                 <th className="p-4 bg-gray-300 border border-gray-200">
@@ -115,6 +116,13 @@ const ReportPage = () => {
           Lastly, we connected the Neopixels and the buzzer to the ground pins
           on the Huzzah.
         </p>
+        <h4 className="self-start my-6 text-xl font-bold">🎛 Circuitry</h4>
+        <Image
+          src="/suunns_circuitry.png"
+          alt="circuitry"
+          width={500}
+          height={500}
+        />
         <h4 className="self-start my-6 text-xl font-bold">👩🏼‍💻 Code</h4>
         <h4 className="self-start pl-4 my-2 text-lg font-semibold">
           ⏺ Buttons
@@ -239,6 +247,25 @@ const ReportPage = () => {
           the user presses the B button which halts the noise and puts the suunn
           back into its idle state.
         </p>
+        <div
+          className="flex justify-around w-full mb-10 font-bold"
+          id="demo-vid"
+        >
+          <div>
+            <video width="320" height="240" controls>
+              <source src="demo.mp4" type="video/mp4" />
+              Your Browser does not support this video
+            </video>
+            Interface
+          </div>
+          <div>
+            <video width="320" height="240" controls>
+              <source src="mqtt.mp4" type="video/mp4" />
+              Your Browser does not support this video
+            </video>
+            MQTT
+          </div>
+        </div>
         <div className="px-4 py-2 text-white bg-black rounded-md cursor-pointer hover:bg-gray-800">
           <Link href={'https://github.com/daninewbs/Suunn'}>
             🐙 Github Repo
