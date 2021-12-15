@@ -4,18 +4,18 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { SketchPicker } from 'react-color'
 
+const API_URL = 'http://suunn.herokuapp.com/mqtt'
+
 const Home: NextPage = () => {
   const [color, setColor] = useState<string>('#ffffff')
   useEffect(() => {
     const postReqOpts = {
       method: 'POST',
+      mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic: 'suunn/color', message: { color } }),
     }
-    console.log(color, postReqOpts)
-    fetch('http://localhost:8080/mqtt', postReqOpts).then(() =>
-      console.log('posted')
-    )
+    fetch(API_URL, postReqOpts)
   }, [color])
   return (
     <div className="h-screen bg-gradient-to-t from-yellow-200">
